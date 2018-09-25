@@ -20,7 +20,9 @@ function done() {
     if (!isBuilt) {
         app.listen(port, () => {
             isBuilt = true;
-            console.log(`${new Date().toUTCString()} Node server is listening to port: ${port}`);
+            console.log(
+                `${new Date().toUTCString()} Node server is listening to port: ${port}`
+            );
         });
     }
 }
@@ -41,15 +43,14 @@ const options = {
     serverSideRender: false
 };
 app.use(webpackDevMiddleware(compiler, options));
-app.use(webpackHotMiddleware(clientCompiler));
 app.use(webpackHotServerMiddleware(compiler));
+app.use(webpackHotMiddleware(clientCompiler));
 
 app.use((req, res) => {
     res.send(res.locals.webpackStats.toJson());
 });
 
 compiler.plugin('done', done);
-
 
 function shutdown() {
     console.log('info', 'Graceful shutdown.');

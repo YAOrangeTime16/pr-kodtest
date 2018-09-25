@@ -7,9 +7,9 @@ let defaultState = fromJS({
 
 export default function(state = defaultState, action) {
     switch (action.type) {
-        case CATEGORY_LOADED:
-            return state.merge({ category: action.category });
-        default:
-            return state;
+    case CATEGORY_LOADED:
+        return state.merge({ category: action.category });
+    default:
+        return state;
     }
 }

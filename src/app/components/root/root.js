@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux';
 import { loadCategory } from '../../actions/categoryActions';
 import './root.scss';
@@ -13,11 +13,7 @@ class Root extends Component {
          * You can get the category data from the category prop:
          * const { category } = this.props;
          */
-        return (
-            <div className="hello-world">
-                Hello world! 👋🏻
-            </div>
-        );
+        return <div className="hello-world">Hello world! 👋🏻</div>;
     }
 }
 

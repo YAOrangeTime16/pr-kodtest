@@ -7,10 +7,12 @@ function categoryLoaded(data) {
         category: data
     };
 }
-
+/*eslint-disable*/
 export function loadCategory() {
     return dispatch => {
-        return getJson('/public/v1/cl/1/SE/DESKTOP?urlName=mobiltelefoner&nofilters=false')
+        return getJson(
+            '/public/v1/cl/1/SE/DESKTOP?urlName=mobiltelefoner&nofilters=false'
+        )
             .then(response => {
                 dispatch(categoryLoaded(response.data.viewData.category));
             })
@@ -19,3 +21,4 @@ export function loadCategory() {
             });
     };
 }
+/* eslint-enable */

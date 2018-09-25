@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0 */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
@@ -5,7 +6,7 @@ import App from './app';
 // AppContainer is a necessary wrapper component for HMR
 import { AppContainer } from 'react-hot-loader';
 
-const render = (Component) => {
+const render = Component => {
     ReactDOM.render(
         <AppContainer>
             <Component />
