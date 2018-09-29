@@ -1,7 +1,7 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import React, { Component, Fragment } from 'react'; // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux';
 import { loadCategory } from '../../actions/categoryActions';
-import { Seq } from 'immutable';
+
 import List from './List';
 import './root.scss';
 
@@ -26,11 +26,11 @@ class Root extends Component {
         const medium = window.matchMedia(this.media.medium);
         const large = window.matchMedia(this.media.large);
         if (large.matches) {
-            this.setState({ mq: 'desktop' });
+            console.log('desktop');
         } else if (medium.matches) {
-            this.setState({ mq: 'ipad' });
+            console.log('tablet / medium device');
         } else {
-            this.setState({ mq: 'small device' });
+            console.log('mobile / small device');
         }
     };
 
@@ -40,14 +40,11 @@ class Root extends Component {
          * const { category } = this.props;
          */
         const { category } = this.props;
-        const { mq } = this.state;
-        const c = category.toJS();
-        const immutableList = c.products;
-        const products = Seq(immutableList).toArray();
+        const products = category.toJS().products;
         return (
-            <div>
-                <List products={products} mq={mq} />
-            </div>
+            <Fragment>
+                <List products={products} />
+            </Fragment>
         );
     }
 }
