@@ -34,4 +34,4 @@ Det fanns en bild som saknades i datan. Detta förstörde layouten. Jag fixade d
 
 #### LAZYLOAD
 
-Jag använde också ett npm packet, `react-lazy-load-image-component`, för att implementera lazyload av bilerna.
+Jag använde ett npm packet, `react-lazy-load-image-component`, för att implementera lazyload av bilerna.
