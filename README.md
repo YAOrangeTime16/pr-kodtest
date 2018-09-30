@@ -1,9 +1,19 @@
 # Pricerunner kodtest
 
+Configration error:
+
+Unexpected Token on app.js
+
+added .babelrc and "presets": ["es2015", "react"] solved this problem.
+
+Then on the browser I got,
+The 'server' compiler must export a function in the form of `(options) => (req, res, next) => void`
+
+This could be solved on `server.js`, line 46.
+
 Välkommen till Pricerunners kodtest! Vi har förberett en liten uppgift som vi vill att du löser
 för att vi ska kunna bedömma dina färdigheter. Uppgiften går ut på att rita ut en produktlistning
 på ett antal produkter som hämtas från våra system enligt en design.
-
 
 Vi har som sagt förberett lite kod för att du ska kunna komma igång snabbare. Som du kanske ser har
 vi satt upp Webpack för att kompilera och packa ihop koden. Vi har även satt upp Redux, reducers och

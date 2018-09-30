@@ -4,7 +4,7 @@ const cssReg = /\.css(\?v=\w*)*$/;
 export function getAssets(stats) {
     return {
         scripts: getAssetsOfType('js', stats),
-        stylesheets: getAssetsOfType('css', stats),
+        stylesheets: getAssetsOfType('css', stats)
     };
 }
 
@@ -15,8 +15,7 @@ function getAssetsOfType(type, stats) {
 
     if (type === 'js') {
         return vendorAssets.concat(mainAssets);
-    }
-    else {
+    } else {
         return vendorAssets.concat(mainAssets);
     }
 }
@@ -26,10 +25,9 @@ function getAssetsForKey(key, stats, reg) {
     if (stats.assetsByChunkName && stats.assetsByChunkName[key]) {
         const files = stats.assetsByChunkName[key];
         // files could be either string or array, but we always want to return an array.
-        if (typeof(files) === 'string') {
+        if (typeof files === 'string') {
             assets = reg.test(files) ? [files] : [];
-        }
-        else if (files.filter) {
+        } else if (files.filter) {
             assets = files.filter(asset => reg.test(asset));
         }
     }

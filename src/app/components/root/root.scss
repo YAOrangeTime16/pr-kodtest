@@ -1,5 +1,9 @@
+@import "./variables";
+@import "./mixin";
+@import "./list";
+
 .hello-world {
-    margin-top: 20px;
-    font-size: 20px;
-    text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
 }
